@@ -1,18 +1,24 @@
 <template>
+
   <div id="app">
-    <h1 class="title text-center text-secondary">Meal Capgemini</h1>
-    <MealWorld msg="Welcome to Meal App"/>
+    <div class="container">
+      <h1 class="title text-center text-success">Meal</h1>
+    </div>
+    <router-view></router-view>
+    <!-- <MealWorld/> -->
+
   </div>
+
 </template>
 
 <script>
-import MealWorld from './components/MealWorld.vue'
+//import MealWorld from './components/MealWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    MealWorld
-  }
+  // components: {
+  //   MealWorld
+  // }
 }
 </script>
 
@@ -23,7 +29,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 .title {
   font-size: 1.5cm;

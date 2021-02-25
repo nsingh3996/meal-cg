@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid">
+    <div v-if="searchCheck">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <form class="d-flex" @submit.prevent="searchMeal()">
         <input class="form-control me-2" type="search" v-model="searchItem" placeholder="Search" aria-label="Search">
@@ -7,8 +8,7 @@
       </form>
     </nav>
 
-    <div v-if="searchCheck">
-      <div class="card text-white bg-dark mb-3" v-for="(dish, index) in meal.meals" :key="index">
+      <div class="card text-white bg-dark mb-3" v-for="(dish, index) in availableMeal.meals" :key="index">
         <div class="row">
           <div class="col"></div>
           <div class="col-6"><img :src="dish.strMealThumb" class="card-img-top"></div>
@@ -21,132 +21,65 @@
           <hr/>
           <video-embed css="embed-responsive-21by9" :src="dish.strYoutube"></video-embed>
           <hr/>
-          <table class="card-text table table-dark table-borderless">
-              <thead>
-                <tr>
-                  <th style="color: red"><h5>Ingredient</h5></th>
-                  <th style="color: red"><h5>Measure</h5></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{dish.strIngredient1}}</td>
-                  <td>{{dish.strMeasure1}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient2}}</td>
-                  <td>{{dish.strMeasure2}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient3}}</td>
-                  <td>{{dish.strMeasure3}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient4}}</td>
-                  <td>{{dish.strMeasure4}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient5}}</td>
-                  <td>{{dish.strMeasure5}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient6}}</td>
-                  <td>{{dish.strMeasure6}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient7}}</td>
-                  <td>{{dish.strMeasure7}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient8}}</td>
-                  <td>{{dish.strMeasure8}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient9}}</td>
-                  <td>{{dish.strMeasure9}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient10}}</td>
-                  <td>{{dish.strMeasure10}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient11}}</td>
-                  <td>{{dish.strMeasure11}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient12}}</td>
-                  <td>{{dish.strMeasure12}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient13}}</td>
-                  <td>{{dish.strMeasure13}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient14}}</td>
-                  <td>{{dish.strMeasure14}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient15}}</td>
-                  <td>{{dish.strMeasure15}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient16}}</td>
-                  <td>{{dish.strMeasure16}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient17}}</td>
-                  <td>{{dish.strMeasure17}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient18}}</td>
-                  <td>{{dish.strMeasure18}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient19}}</td>
-                  <td>{{dish.strMeasure19}}</td>
-                </tr>
-                <tr>
-                  <td>{{dish.strIngredient20}}</td>
-                  <td>{{dish.strMeasure20}}</td>
-                </tr>
-              </tbody>
-          </table>
+          <h5 class="card-text" style="color: red">Ingredients and Measures</h5>
+          <p class="card-text">{{dish.strIngredient1}}  {{dish.strMeasure1}}</p>
+          <p class="card-text">{{dish.strIngredient2}}  {{dish.strMeasure2}}</p>
+          <p class="card-text">{{dish.strIngredient3}}  {{dish.strMeasure3}}</p>
+          <p class="card-text">{{dish.strIngredient4}}  {{dish.strMeasure4}}</p>
+          <p class="card-text">{{dish.strIngredient5}}  {{dish.strMeasure5}}</p>
+          <p class="card-text">{{dish.strIngredient6}}  {{dish.strMeasure6}}</p>
+          <p class="card-text">{{dish.strIngredient7}}  {{dish.strMeasure7}}</p>
+          <p class="card-text">{{dish.strIngredient8}}  {{dish.strMeasure8}}</p>
+          <p class="card-text">{{dish.strIngredient9}}  {{dish.strMeasure9}}</p>
+          <p class="card-text">{{dish.strIngredient10}}  {{dish.strMeasure10}}</p>
+          <p class="card-text">{{dish.strIngredient11}}  {{dish.strMeasure11}}</p>
+          <p class="card-text">{{dish.strIngredient12}}  {{dish.strMeasure12}}</p>
+          <p class="card-text">{{dish.strIngredient13}}  {{dish.strMeasure13}}</p>
+          <p class="card-text">{{dish.strIngredient14}}  {{dish.strMeasure14}}</p>
+          <p class="card-text">{{dish.strIngredient15}}  {{dish.strMeasure15}}</p>
+          <p class="card-text">{{dish.strIngredient16}}  {{dish.strMeasure16}}</p>
+          <p class="card-text">{{dish.strIngredient17}}  {{dish.strMeasure17}}</p>
+          <p class="card-text">{{dish.strIngredient18}}  {{dish.strMeasure18}}</p>
+          <p class="card-text">{{dish.strIngredient19}}  {{dish.strMeasure19}}</p>
+          <p class="card-text">{{dish.strIngredient20}}  {{dish.strMeasure20}}</p>
         </div>
       </div>
     </div>
-    <div v-else><h1>Meal Not Found !</h1></div>
+    <div v-else>
+    </div>
 
   </div>
 </template>
 
 <script>
-import { getRandomMeal,getMealBySearchName } from '../store/meal.service.js';
+import { getMealBySearchName } from '../service/meal.service.js';
+
 
 export default {
   name: 'MealWorld',
-  created() {
-    const response = getRandomMeal();
-     response
-    .then((result) => this.meal = result.data )
-    .catch(console.error);
+
+  mounted() {
+    this.$store.dispatch('getMeal');
   },
   updated() {
-
-        if(this.meal.meals == null) {
+        if(this.availableMeal.meals == null) {
           this.searchCheck = false;
+          this.$router.push('/error');
           this.searchItem="";
-          window.location.href = '';
+
         }
   },
-  props: {
-    msg: String
-  },
+
   data() {
     return {
-      meal: {},
       searchItem: "",
       searchCheck: Boolean,
     };
+  },
+  computed: {
+    availableMeal() {
+      return this.$store.state.meal;
+    },
   },
   methods: {
     searchMeal() {
@@ -154,7 +87,7 @@ export default {
       {
         const responseSearch = getMealBySearchName(this.searchItem);
         responseSearch
-        .then((result) => this.meal = result.data)
+        .then((result) => this.$store.commit('updateMeal', result.data))
         .catch((error) => console.log(error))
       }
     },
