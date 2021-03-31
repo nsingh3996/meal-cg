@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1616657092699" clover="3.2.0">
+  <project timestamp="1616657092699" name="All files">
+    <metrics statements="23" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="3" elements="38" coveredelements="10" complexity="0" loc="23" ncloc="23" packages="5" files="6" classes="6"/>
+    <package name="meal-cg">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="babel.config.js" path="C:\Users\Magneto\meal-cg\babel.config.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+      <file name="jest.config.js" path="C:\Users\Magneto\meal-cg\jest.config.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="meal-cg.src.components">
+      <metrics statements="11" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="3"/>
+      <file name="MealWorld.vue" path="C:\Users\Magneto\meal-cg\src\components\MealWorld.vue">
+        <metrics statements="11" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="3"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="74" count="3" type="stmt"/>
+        <line num="81" count="3" type="stmt"/>
+        <line num="86" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="meal-cg.src.router">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\Magneto\meal-cg\src\router\index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="meal-cg.src.service">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="meal.service.js" path="C:\Users\Magneto\meal-cg\src\service\meal.service.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="meal-cg.src.store">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\Magneto\meal-cg\src\store\index.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
